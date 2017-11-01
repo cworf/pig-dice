@@ -1,0 +1,143 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #00404a;
+}
+.center-box {
+    width: 50%;
+    height: 50%;
+    background: #fff;
+}
+.score-box span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 83%;
+    font-size: 2em;
+    color: #fff;
+}
+.player-box {
+    padding: 4%;
+    margin: 0!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.center-box .row:first-of-type {
+    margin: 0;
+}
+
+.buttons {
+  position: absolute;
+  left: 43%;
+  top: 45%;
+  width: 14%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 137px;
+}
+
+.row {
+    height: 100%;
+    position: relative;
+}
+
+.score-box {
+    position: absolute;
+    bottom: 0;
+    width: 30%;
+    height: 30%;
+    text-align: center;
+    background: #a8a5d4;
+}
+
+.score-box.p1 {
+    left: 0;
+}
+
+.score-box.p2 {
+    right: 0;
+}
+
+.player-box:not(:last-of-type) {
+    box-shadow: inset -2px 0 #004049;
+}
+
+.score-title {
+    background: #6e7e9c;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.current-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    bottom: 0;
+    background: #a8fbdc;
+    transition: all .5s ease;
+}
+
+.roll-btn, .pass-btn {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.roll-btn {
+    background: #008598;
+    color: #fff;
+}
+
+.pass-btn {
+    background: #35a1ff;
+    color:#000;
+}
+
+.roll-btn:hover, .pass-btn:hover {
+    box-shadow: inset 0 0 35px #000;
+}
+
+.turn-box {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    width: 0;
+    transition: all .5s ease;
+    background: #757575;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    overflow: hidden;
+}
+.other{
+  left:50%;
+}
+.turn-box.p1 {
+    right: 100%;
+}
+
+.turn-box.active {
+    width: 120px;
+}
+
+.turn-box.p2 {
+    left: 100%;
+}
