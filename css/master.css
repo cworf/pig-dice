@@ -7,6 +7,16 @@ body {
     height: 100vh;
     background: #00404a;
 }
+h3 {
+    text-align: center;
+}
+
+h1 {
+    background: rgb(255, 198, 219);
+    margin: 0;
+    z-index: 9;
+    padding: 10px 100px;
+}
 .center-box {
     width: 50%;
     height: 50%;
@@ -51,7 +61,7 @@ body {
 
 .score-box {
     position: absolute;
-    bottom: 0;
+    bottom: -8px;
     width: 30%;
     height: 30%;
     text-align: center;
@@ -59,11 +69,11 @@ body {
 }
 
 .score-box.p1 {
-    left: 0;
+    left: -8px;
 }
 
 .score-box.p2 {
-    right: 0;
+    right: -8px;
 }
 
 .player-box:not(:last-of-type) {
@@ -72,9 +82,21 @@ body {
 
 .score-title {
     background: #6e7e9c;
-    color: #fff;
+    color: #404040;
     font-weight: bold;
     letter-spacing: 2px;
+}
+.score-box.p1 {
+    box-shadow: 1px -1px, 2px -2px, 3px -3px, 4px -4px, 5px -5px, 6px -6px, 7px -7px, 8px -8px, 8px -8px 20px;
+}
+.score-box.p2 {
+    box-shadow: -1px -1px, -2px -2px, -3px -3px, -4px -4px, -5px -5px, -6px -6px, -7px -7px, -8px -8px, -8px -8px 20px;
+}
+.p1 .score-title{
+    box-shadow: 1px -1px, 2px -2px, 3px -3px, 4px -4px, 5px -5px, 6px -6px, 7px -7px, 8px -8px
+}
+.p2 .score-title{
+    box-shadow: -1px -1px, -2px -2px, -3px -3px, -4px -4px, -5px -5px, -6px -6px, -7px -7px, -8px -8px
 }
 
 .current-player {
@@ -97,6 +119,8 @@ body {
     letter-spacing: 2px;
     font-size: 1.5em;
     cursor: pointer;
+    transition: all .3s ease;
+    z-index: 2;
 }
 
 .roll-btn {
@@ -126,6 +150,7 @@ body {
     align-items: center;
     font-size: 3em;
     overflow: hidden;
+    z-index: 1;
 }
 .other{
   left:50%;
@@ -140,4 +165,62 @@ body {
 
 .turn-box.p2 {
     left: 100%;
+}
+
+.turn-score {
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c2c2c2;
+    overflow: hidden;
+    z-index: 0;
+    width: 80px;
+    transition: all .5s ease;
+}
+.turn-score.p1 {
+    left: 0;
+}
+
+.turn-score.p2 {
+    right: 0;
+}
+.turn-score.p1.active {
+    left: -200px;
+}
+
+.turn-score.p2.active {
+    right: -200px;
+}
+.oops {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #dd5757;
+    transition: all 1s ease;
+    padding: 0px;
+    text-align: center;
+}
+
+.oops.p1 {
+    left: 0;
+}
+
+.oops.p2 {
+    right: 0;
+}
+
+.oops.active {
+    width: 200px;
+    top: 36%;
+    bottom: 36%;
+    padding: 20px;
 }
